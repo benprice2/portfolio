@@ -2,6 +2,7 @@ import styles from './App.module.css'
 import { Navbar } from './components/nav/Navbar';
 import { Hero } from './components/hero/Hero';
 import { About } from './components/about/About';
+import { Experience } from './components/experience/Experience';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Experience />
     </div>
 
   )
