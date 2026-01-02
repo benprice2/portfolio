@@ -5,11 +5,11 @@ export const fadeInUp = {
   },
   animate: { 
     opacity: 1, 
-    y: 0 
-  },
-  transition: { 
-    duration: 0.4, 
-    ease: [0.23, 1, 0.32, 1] 
+    y: 0,
+    transition: { 
+      duration: 0.4, 
+      ease: [0.23, 1, 0.32, 1] 
+    }
   }
 };
 
@@ -26,11 +26,11 @@ export const fadeIn = {
     opacity: 0 
   },
   animate: { 
-    opacity: 1 
-  },
-  transition: { 
-    duration: 0.3,
-    ease: 'easeInOut'
+    opacity: 1,
+    transition: { 
+      duration: 0.3,
+      ease: 'easeInOut'
+    }
   }
 };
 
@@ -41,10 +41,10 @@ export const scaleIn = {
   },
   animate: { 
     opacity: 1, 
-    scale: 1 
-  },
-  transition: { 
-    duration: 0.4,
-    ease: [0.23, 1, 0.32, 1]
+    scale: 1,
+    transition: { 
+      duration: 0.4,
+      ease: [0.23, 1, 0.32, 1]
+    }
   }
 };
