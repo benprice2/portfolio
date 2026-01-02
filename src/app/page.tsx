@@ -1,65 +1,189 @@
-import Image from "next/image";
+'use client';
+
+import { AuroraBackground } from '@/components/AuroraBackground';
+import { ProjectCard } from '@/components/ProjectCard';
+import { SkillGroup } from '@/components/SkillGroup';
+import { StatusIndicator } from '@/components/StatusIndicator';
+import { projects } from '@/data/projects';
+import { skillGroups } from '@/data/skills';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <>
+    <div className="min-h-screen relative">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 relative">
+        {/* Overview Section */}
+        <header id="overview" className="mb-16 pt-24 relative">
+          <div className="max-w-3xl">
+            <h1 className="font-display text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r dark:from-white dark:to-purple-200 from-amber-200 to-amber-400">Ben Price</h1>
+            <p className="text-2xl dark:text-accent-purple-300 text-amber-300 mb-8">AI-Focused Web Developer & Solutions Engineer</p>
+            
+            <p className="text-lg dark:text-gray-300 text-white/90 mb-12 max-w-2xl">
+              Building AI solutions that solve real world problems whilst developing my skills as a developer by building websites and SaaS applications that matter.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <a 
+                href="/cv.pdf" 
+                className="inline-flex items-center justify-center px-6 py-3 border-2 dark:border-white/20 border-amber-300/30 rounded-lg text-base font-medium dark:text-white text-amber-100 dark:bg-white/5 bg-amber-400/10 dark:hover:bg-white/10 hover:bg-amber-400/20 focus:outline-none focus:ring-2 dark:focus:ring-white/30 focus:ring-amber-300/30 transition-all duration-200 backdrop-blur-sm"
+              >
+                <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV
+              </a>
+              <a 
+                href="https://github.com/benprice" 
+                className="inline-flex items-center justify-center px-6 py-3 border-2 dark:border-white/10 border-amber-300/20 rounded-lg text-base font-medium dark:text-white/80 text-amber-100/90 dark:bg-white/5 bg-amber-400/5 dark:hover:bg-white/10 hover:bg-amber-400/10 focus:outline-none focus:ring-2 dark:focus:ring-white/30 focus:ring-amber-300/20 transition-all duration-200 backdrop-blur-sm"
+              >
+                <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+
+            <div className="flex flex-wrap gap-6 text-sm">
+              <div className="flex items-center dark:text-white/70 text-amber-100/90">
+                <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Auckland, New Zealand
+              </div>
+              <div className="flex items-center dark:text-purple-300 text-amber-300">
+                <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Available for Full-Time Positions & Freelance Work
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Projects Section */}
+        <section id="projects" className="mb-12 space-y-12">
+          <h2 className="text-2xl font-display font-bold text-white">Projects</h2>
+          
+          {/* SaaS Applications */}
+          <div>
+            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+              <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 3v18h18"/>
+                <path d="m19 9-5 5-4-4-3 3"/>
+              </svg>
+              SaaS Applications
+            </h3>
+            <div className="space-y-6">
+              {projects.filter(p => p.category === 'saas').map((project) => (
+                <div key={project.id} className="max-w-[1400px] mx-auto">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Websites */}
+          <div>
+            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+              <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/>
+                <path d="M7 7h.01"/>
+              </svg>
+              Websites
+            </h3>
+            <div className="space-y-6">
+              {projects.filter(p => p.category === 'website').map((project) => (
+                <div key={project.id} className="max-w-[1400px] mx-auto">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* AI Tools */}
+          <div>
+            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+              <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2v20"/>
+                <path d="M2 12h20"/>
+                <path d="m12 2 4 4"/>
+                <path d="m12 2-4 4"/>
+                <path d="m12 22 4-4"/>
+                <path d="m12 22-4-4"/>
+                <path d="m2 12 4 4"/>
+                <path d="m2 12 4-4"/>
+                <path d="m22 12-4 4"/>
+                <path d="m22 12-4-4"/>
+              </svg>
+              AI Tools
+            </h3>
+            <div className="space-y-6">
+              {projects.filter(p => p.category === 'ai-tool').map((project) => (
+                <div key={project.id} className="max-w-[1400px] mx-auto">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Other Projects */}
+          <div>
+            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+              <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                <path d="M5 3v4"/>
+                <path d="M19 17v4"/>
+                <path d="M3 5h4"/>
+                <path d="M17 19h4"/>
+              </svg>
+              Other Projects
+            </h3>
+            <div className="space-y-6">
+              {projects.filter(p => p.category === 'other').map((project) => (
+                <div key={project.id} className="max-w-[1400px] mx-auto">
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="mb-12">
+          <h2 className="text-2xl font-display font-bold dark:text-white text-amber-100 mb-6">Skills & Expertise</h2>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {skillGroups.map((group) => (
+              <div key={group.id} className="backdrop-blur-sm dark:bg-white/5 bg-amber-400/5 rounded-lg dark:border-white/10 border-amber-300/20 p-6 shadow-xl">
+                <SkillGroup {...group} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section id="process" className="mb-12">
+          <h2 className="text-2xl font-display font-bold dark:text-white text-amber-100 mb-6">Engineering Process</h2>
+          <div className="backdrop-blur-sm dark:bg-white/5 bg-amber-400/5 rounded-lg dark:border-white/10 border-amber-300/20 p-8 shadow-xl">
+            <div className="prose prose-invert max-w-none">
+              <p className="dark:text-white/80 text-amber-100/90">
+                My engineering process emphasizes thoughtful system design, iterative development, and continuous improvement. I focus on:
+              </p>
+              <ul className="mt-4 space-y-2 dark:text-white/80 text-amber-100/90">
+                <li>Starting with clear problem definition and success criteria</li>
+                <li>Breaking down complex systems into manageable, testable components</li>
+                <li>Prioritizing maintainability and scalability in architectural decisions</li>
+                <li>Implementing robust testing and monitoring from day one</li>
+                <li>Regular refactoring to improve code quality and reduce technical debt</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
+    </>
   );
 }
