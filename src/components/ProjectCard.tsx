@@ -94,12 +94,12 @@ export function ProjectCard({
           <div>
           <motion.h3 
             id={`project-${title.toLowerCase().replace(/\s+/g, '-')}`}
-            className="text-xl font-semibold dark:text-white text-gray-900"
+            className="text-2xl font-clash tracking-tight font-semibold dark:text-white text-gray-900"
           >
             {title}
           </motion.h3>
           <motion.p 
-            className="mt-2 text-sm dark:text-gray-300 text-gray-600"
+            className="mt-2 text-base font-satoshi leading-relaxed dark:text-gray-300 text-gray-600"
             variants={{
               initial: { opacity: 0, y: 5 },
               animate: { opacity: 1, y: 0, transition: { delay: 0.1 } }
@@ -127,12 +127,12 @@ export function ProjectCard({
         }}
       >
         <div>
-          <h4 className="text-sm font-medium dark:text-white text-gray-900">Problem</h4>
-          <p className="mt-1 text-sm dark:text-gray-300 text-gray-600">{problem}</p>
+          <h4 className="text-base font-clash tracking-tight font-medium dark:text-white text-gray-900">Problem</h4>
+          <p className="mt-1 text-base font-satoshi leading-relaxed dark:text-gray-300 text-gray-600">{problem}</p>
         </div>
         <div>
-          <h4 className="text-sm font-medium dark:text-white text-gray-900">Solution</h4>
-          <p className="mt-1 text-sm dark:text-gray-300 text-gray-600">{solution}</p>
+          <h4 className="text-base font-clash tracking-tight font-medium dark:text-white text-gray-900">Solution</h4>
+          <p className="mt-1 text-base font-satoshi leading-relaxed dark:text-gray-300 text-gray-600">{solution}</p>
         </div>
       </motion.div>
 

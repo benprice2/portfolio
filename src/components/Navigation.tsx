@@ -72,7 +72,7 @@ export function Navigation() {
     >
       <button
         onClick={toggleNavigation}
-        className="absolute -right-3 top-6 p-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 hover:text-white hover:bg-white/20 transition-colors"
+        className="absolute -right-3 top-14 p-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 hover:text-white hover:bg-white/20 transition-colors"
         aria-label={isCollapsed ? 'Expand navigation' : 'Collapse navigation'}
       >
         <svg
@@ -92,21 +92,14 @@ export function Navigation() {
       </button>
       <div className="flex flex-col h-full">
         <div className="flex-1">
-          <div className="mb-8 overflow-hidden">
+          <div className="mb-8">
             <motion.h2 
-              className="font-display text-2xl font-bold text-white whitespace-nowrap"
-              animate={{ opacity: isCollapsed ? 0 : 1, width: isCollapsed ? 0 : '100%' }}
+              className={`font-clash text-3xl font-bold tracking-tighter text-white whitespace-nowrap gradient-text ${isCollapsed ? 'text-center' : 'px-3'}`}
+              animate={{ opacity: 1, width: '100%' }}
               transition={{ duration: 0.2 }}
             >
-              Ben Price
+              BP
             </motion.h2>
-            <motion.p 
-              className="mt-1 text-sm text-white/70 whitespace-nowrap"
-              animate={{ opacity: isCollapsed ? 0 : 1, width: isCollapsed ? 0 : '100%' }}
-              transition={{ duration: 0.2, delay: 0.1 }}
-            >
-              AI-Focused Web Developer & Solutions Engineer
-            </motion.p>
           </div>
 
           <ul className="space-y-2">

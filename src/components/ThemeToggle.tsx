@@ -22,7 +22,7 @@ export function ThemeToggle() {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={toggleTheme}
-      className="fixed bottom-8 right-8 p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all duration-200 z-50"
+      className="fixed bottom-8 right-8 p-3 rounded-full dark:bg-gray-900/50 bg-yellow-400/50 backdrop-blur-sm shadow-lg dark:border-black border-yellow-400 border-2 dark:hover:bg-gray-800/60 hover:bg-yellow-400/60 focus:outline-none dark:focus:ring-2 dark:focus:ring-black focus:ring-2 focus:ring-yellow-400 transition-all duration-200 z-50"
       aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >
       <motion.svg
@@ -35,8 +35,8 @@ export function ThemeToggle() {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-white"
-        animate={{ rotate: theme === 'dark' ? 40 : 0 }}
+        className="dark:text-gray-400 text-white"
+        animate={{ rotate: theme === 'dark' ? 40 : 0, scale: theme === 'dark' ? 0.9 : 1 }}
         transition={{ type: "spring", stiffness: 100 }}
       >
         {theme === 'dark' ? (

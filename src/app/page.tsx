@@ -11,14 +11,14 @@ export default function Home() {
   return (
     <>
     <div className="min-h-screen relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 relative">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 relative">
         {/* Overview Section */}
-        <header id="overview" className="mb-16 pt-24 relative">
+        <header id="overview" className="mb-16 pt-12 relative">
           <div className="max-w-3xl">
-            <h1 className="font-display text-6xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r dark:from-white dark:to-purple-200 from-amber-200 to-amber-400">Ben Price</h1>
-            <p className="text-2xl dark:text-accent-purple-300 text-amber-300 mb-8">AI-Focused Web Developer & Solutions Engineer</p>
+            <h1 className="heading-xl gradient-text mb-6">Ben Price</h1>
+            <p className="text-2xl font-clash tracking-tight dark:text-accent-purple-300 text-amber-300 mb-8">AI-Focused Web Developer & Solutions Engineer</p>
             
-            <p className="text-lg dark:text-gray-300 text-white/90 mb-12 max-w-2xl">
+            <p className="text-lg font-satoshi leading-relaxed dark:text-gray-300 text-white/90 mb-12 max-w-2xl">
               Building AI solutions that solve real world problems whilst developing my skills as a developer by building websites and SaaS applications that matter.
             </p>
 
@@ -66,11 +66,11 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="mb-12 space-y-12">
-          <h2 className="text-2xl font-display font-bold text-white">Projects</h2>
+          <h2 className="text-3xl font-clash font-bold tracking-tight text-white mb-8">Projects</h2>
           
           {/* SaaS Applications */}
           <div>
-            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+            <h3 className="text-2xl font-clash tracking-tight font-semibold text-white mb-6 flex items-center gap-2">
               <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 3v18h18"/>
                 <path d="m19 9-5 5-4-4-3 3"/>
@@ -88,7 +88,7 @@ export default function Home() {
 
           {/* Websites */}
           <div>
-            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+            <h3 className="text-2xl font-clash tracking-tight font-semibold text-white mb-6 flex items-center gap-2">
               <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/>
                 <path d="M7 7h.01"/>
@@ -106,7 +106,7 @@ export default function Home() {
 
           {/* AI Tools */}
           <div>
-            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+            <h3 className="text-2xl font-clash tracking-tight font-semibold text-white mb-6 flex items-center gap-2">
               <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2v20"/>
                 <path d="M2 12h20"/>
@@ -132,7 +132,7 @@ export default function Home() {
 
           {/* Other Projects */}
           <div>
-            <h3 className="text-xl font-display font-semibold text-white mb-6 flex items-center gap-2">
+            <h3 className="text-2xl font-clash tracking-tight font-semibold text-white mb-6 flex items-center gap-2">
               <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
                 <path d="M5 3v4"/>
@@ -154,7 +154,7 @@ export default function Home() {
 
         {/* Skills Section */}
         <section id="skills" className="mb-12">
-          <h2 className="text-2xl font-display font-bold dark:text-white text-amber-100 mb-6">Skills & Expertise</h2>
+          <h2 className="text-3xl font-clash tracking-tight font-bold dark:text-white text-amber-100 mb-6">Skills & Expertise</h2>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {skillGroups.map((group) => (
               <div key={group.id} className="backdrop-blur-sm dark:bg-white/5 bg-amber-400/5 rounded-lg dark:border-white/10 border-amber-300/20 p-6 shadow-xl">
@@ -164,21 +164,48 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Process Section */}
+        {/* Developer's Memo Section */}
         <section id="process" className="mb-12">
-          <h2 className="text-2xl font-display font-bold dark:text-white text-amber-100 mb-6">Engineering Process</h2>
+          <h2 className="text-3xl font-clash tracking-tight font-bold dark:text-white text-amber-100 mb-6 flex items-center gap-3">
+            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Developer's Memo
+          </h2>
           <div className="backdrop-blur-sm dark:bg-white/5 bg-amber-400/5 rounded-lg dark:border-white/10 border-amber-300/20 p-8 shadow-xl">
-            <div className="prose prose-invert max-w-none">
-              <p className="dark:text-white/80 text-amber-100/90">
-                My engineering process emphasizes thoughtful system design, iterative development, and continuous improvement. I focus on:
-              </p>
-              <ul className="mt-4 space-y-2 dark:text-white/80 text-amber-100/90">
-                <li>Starting with clear problem definition and success criteria</li>
-                <li>Breaking down complex systems into manageable, testable components</li>
-                <li>Prioritizing maintainability and scalability in architectural decisions</li>
-                <li>Implementing robust testing and monitoring from day one</li>
-                <li>Regular refactoring to improve code quality and reduce technical debt</li>
-              </ul>
+            <div className="prose prose-invert max-w-none space-y-6">
+              <div>
+                <h3 className="text-xl font-clash tracking-tight font-semibold dark:text-white text-amber-100 mb-3">Vision</h3>
+                <p className="font-satoshi leading-relaxed dark:text-white/80 text-amber-100/90">
+                  I envision a future where AI enhances human creativity rather than replacing it. My goal is to bridge the gap between cutting-edge AI technology and practical, user-focused applications that solve real-world problems.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-clash tracking-tight font-semibold dark:text-white text-amber-100 mb-3">Core Values</h3>
+                <ul className="mt-4 space-y-2 dark:text-white/80 text-amber-100/90 list-none">
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent-purple-400 mt-1">◆</span>
+                    <span><strong className="text-accent-purple-400">Human-Centered Design:</strong> Creating intuitive interfaces that make complex AI capabilities accessible to everyone</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent-purple-400 mt-1">◆</span>
+                    <span><strong className="text-accent-purple-400">Ethical AI Development:</strong> Prioritizing transparency, fairness, and user privacy in all AI implementations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent-purple-400 mt-1">◆</span>
+                    <span><strong className="text-accent-purple-400">Continuous Learning:</strong> Staying at the forefront of AI and web technologies through constant experimentation and learning</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-clash tracking-tight font-semibold dark:text-white text-amber-100 mb-3">Future Focus</h3>
+                <p className="font-satoshi leading-relaxed dark:text-white/80 text-amber-100/90">
+                  I'm particularly excited about developing AI-powered tools that augment human capabilities in creative and knowledge work. My current focus is on building applications that make AI more accessible and practical for everyday use, while maintaining high standards of performance and user experience.
+                </p>
+              </div>
             </div>
           </div>
         </section>

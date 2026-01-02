@@ -8,6 +8,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        clash: ['var(--font-clash)', 'sans-serif'],
+        satoshi: ['var(--font-satoshi)', 'sans-serif'],
+        fraunces: ['var(--font-fraunces)', 'serif'],
+      },
       colors: {
         'gray-50': '#ffffff',
         'gray-100': '#f8f9fa',
