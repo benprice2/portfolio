@@ -63,8 +63,7 @@ export const projects: Project[] = [
     technologies: [
       { name: 'Next.js', color: 'bg-accent-purple-50 text-accent-purple-700' },
       { name: 'TypeScript', color: 'bg-accent-purple-100 text-accent-purple-800' },
-      { name: 'Tailwind CSS', color: 'bg-accent-secondary-50 text-accent-secondary-700' },
-      { name: 'Contentful CMS', color: 'bg-accent-secondary-100 text-accent-secondary-800' }
+      { name: 'Tailwind CSS', color: 'bg-accent-secondary-50 text-accent-secondary-700' }
     ],
     demoUrl: 'https://dhcelebrant.vercel.app',
     status: 'completed'

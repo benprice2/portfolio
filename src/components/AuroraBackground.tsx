@@ -19,11 +19,11 @@ const DARK_COLORS = [
 ];
 
 const LIGHT_COLORS = [
-  'rgb(255, 183, 77)',    // Warm Yellow
-  'rgb(251, 140, 0)',     // Amber
-  'rgb(255, 111, 0)',     // Orange
-  'rgb(255, 160, 0)',     // Gold
-  'rgb(255, 214, 0)',     // Yellow
+  'rgb(255, 200, 0)',    // Warm Yellow
+  'rgb(255, 190, 0)',    // Golden Yellow
+  'rgb(255, 180, 0)',    // Amber Yellow
+  'rgb(255, 170, 0)',    // Deep Yellow
+  'rgb(255, 160, 0)',    // Rich Yellow
 ];
 
 export function AuroraBackground() {

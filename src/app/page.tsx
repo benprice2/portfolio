@@ -2,16 +2,15 @@
 
 import { AuroraBackground } from '@/components/AuroraBackground';
 import { ProjectCard } from '@/components/ProjectCard';
-import { SkillGroup } from '@/components/SkillGroup';
 import { StatusIndicator } from '@/components/StatusIndicator';
 import { projects } from '@/data/projects';
-import { skillGroups } from '@/data/skills';
+import { TechnologyScroll } from '@/components/TechnologyScroll';
 
 export default function Home() {
   return (
     <>
     <div className="min-h-screen relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 relative">
+      <div className="container mx-auto px-8 sm:px-10 lg:px-12 py-8 relative">
         {/* Overview Section */}
         <header id="overview" className="mb-16 pt-12 relative">
           <div className="max-w-3xl">
@@ -35,7 +34,7 @@ export default function Home() {
                 Download CV
               </a>
               <a 
-                href="https://github.com/benprice" 
+                href="https://github.com/benprice2" 
                 className="inline-flex items-center justify-center px-6 py-3 border-2 dark:border-white/10 border-amber-300/20 rounded-lg text-base font-medium dark:text-white/80 text-amber-100/90 dark:bg-white/5 bg-amber-400/5 dark:hover:bg-white/10 hover:bg-amber-400/10 focus:outline-none focus:ring-2 dark:focus:ring-white/30 focus:ring-amber-300/20 transition-all duration-200 backdrop-blur-sm"
               >
                 <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,7 +78,7 @@ export default function Home() {
             </h3>
             <div className="space-y-6">
               {projects.filter(p => p.category === 'saas').map((project) => (
-                <div key={project.id} className="max-w-[1400px] mx-auto">
+                <div key={project.id} className="w-full mx-auto">
                   <ProjectCard {...project} />
                 </div>
               ))}
@@ -97,7 +96,7 @@ export default function Home() {
             </h3>
             <div className="space-y-6">
               {projects.filter(p => p.category === 'website').map((project) => (
-                <div key={project.id} className="max-w-[1400px] mx-auto">
+                <div key={project.id} className="w-full mx-auto">
                   <ProjectCard {...project} />
                 </div>
               ))}
@@ -121,9 +120,9 @@ export default function Home() {
               </svg>
               AI Tools
             </h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
               {projects.filter(p => p.category === 'ai-tool').map((project) => (
-                <div key={project.id} className="max-w-[1400px] mx-auto">
+                <div key={project.id} className="w-full h-full">
                   <ProjectCard {...project} />
                 </div>
               ))}
@@ -144,7 +143,7 @@ export default function Home() {
             </h3>
             <div className="space-y-6">
               {projects.filter(p => p.category === 'other').map((project) => (
-                <div key={project.id} className="max-w-[1400px] mx-auto">
+                <div key={project.id} className="w-full mx-auto">
                   <ProjectCard {...project} />
                 </div>
               ))}
@@ -152,15 +151,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Skills Section */}
-        <section id="skills" className="mb-12">
-          <h2 className="text-3xl font-clash tracking-tight font-bold dark:text-white text-amber-100 mb-6">Skills & Expertise</h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {skillGroups.map((group) => (
-              <div key={group.id} className="backdrop-blur-sm dark:bg-white/5 bg-amber-400/5 rounded-lg dark:border-white/10 border-amber-300/20 p-6 shadow-xl">
-                <SkillGroup {...group} />
-              </div>
-            ))}
+        {/* Technology Scroll */}
+        <section className="mb-8">
+          <h2 className="text-3xl font-clash font-bold tracking-tight text-white flex items-center gap-2">
+            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 6.1H3"/>
+              <path d="M21 12.1H3"/>
+              <path d="M15.1 18H3"/>
+            </svg>
+            Technologies
+          </h2>
+          <div className="relative p-4 -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden max-w-[100vw]">
+            <TechnologyScroll />
           </div>
         </section>
 
@@ -186,16 +188,16 @@ export default function Home() {
                 <h3 className="text-xl font-clash tracking-tight font-semibold dark:text-white text-amber-100 mb-3">Core Values</h3>
                 <ul className="mt-4 space-y-2 dark:text-white/80 text-amber-100/90 list-none">
                   <li className="flex items-start gap-2">
-                    <span className="text-accent-purple-400 mt-1">◆</span>
-                    <span><strong className="text-accent-purple-400">Human-Centered Design:</strong> Creating intuitive interfaces that make complex AI capabilities accessible to everyone</span>
+                    <span className="dark:text-accent-purple-400 text-yellow-500 mt-1">◆</span>
+                    <span><strong className="dark:text-accent-purple-400 text-yellow-500">Human-Centered Design:</strong> Creating intuitive interfaces that make complex AI capabilities accessible to everyone</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-accent-purple-400 mt-1">◆</span>
-                    <span><strong className="text-accent-purple-400">Ethical AI Development:</strong> Prioritizing transparency, fairness, and user privacy in all AI implementations</span>
+                    <span className="dark:text-accent-purple-400 text-yellow-500 mt-1">◆</span>
+                    <span><strong className="dark:text-accent-purple-400 text-yellow-500">Ethical AI Development:</strong> Prioritizing transparency, fairness, and user privacy in all AI implementations</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-accent-purple-400 mt-1">◆</span>
-                    <span><strong className="text-accent-purple-400">Continuous Learning:</strong> Staying at the forefront of AI and web technologies through constant experimentation and learning</span>
+                    <span className="dark:text-accent-purple-400 text-yellow-500 mt-1">◆</span>
+                    <span><strong className="dark:text-accent-purple-400 text-yellow-500">Continuous Learning:</strong> Staying at the forefront of AI and web technologies through constant experimentation and learning</span>
                   </li>
                 </ul>
               </div>

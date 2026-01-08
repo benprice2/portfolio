@@ -42,18 +42,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${clash.variable} ${satoshi.variable} ${fraunces.variable} antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 selection:bg-accent-purple-200 selection:text-accent-purple-900 relative min-h-screen overflow-x-hidden`}
+        className={`${clash.variable} ${satoshi.variable} ${fraunces.variable} antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 selection:bg-accent-purple-200 selection:text-accent-purple-900`}
       >
         <ThemeProvider>
           <AuroraBackground />
           <NavigationProvider>
-          <div className="flex min-h-screen">
-            <Navigation />
-            <main className="flex-1 w-full transition-all duration-300 ease-in-out">
-              {children}
-            </main>
-          </div>
-          <ThemeToggle />
+            <div className="flex min-h-screen h-screen overflow-x-hidden">
+              <Navigation />
+              <main className="flex-1 relative w-full transition-all duration-300 ease-in-out overflow-x-hidden">
+                <div className="w-full">
+                  {children}
+                </div>
+                <ThemeToggle />
+              </main>
+            </div>
           </NavigationProvider>
         </ThemeProvider>
       </body>

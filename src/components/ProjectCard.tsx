@@ -38,12 +38,12 @@ export function ProjectCard({
   const statusColors = {
     'completed': 'dark:bg-emerald-900/20 dark:text-emerald-400 bg-emerald-100/50 text-emerald-700',
     'in‑progress': 'dark:bg-amber-900/20 dark:text-amber-400 bg-amber-100/50 text-amber-700',
-    'planned': 'dark:bg-gray-800 dark:text-gray-400 bg-gray-100/50 text-gray-600'
+    'planned': 'dark:bg-gray-800/40 dark:text-gray-400 bg-gray-100/50 text-gray-600 border border-gray-600/20 dark:border-gray-400/20'
   };
 
   return (
     <motion.div 
-      className={`${demoUrl ? 'rounded-lg' : ''} dark:bg-gray-800 bg-white shadow-lg hover:shadow-xl transition-all focus-within:ring-2 dark:focus-within:ring-accent-purple-400 focus-within:ring-amber-300 overflow-hidden xl:grid xl:grid-cols-[1.2fr,1fr] xl:gap-0`}
+      className={`rounded-lg dark:bg-gray-800 bg-white shadow-lg hover:shadow-xl transition-all focus-within:ring-2 dark:focus-within:ring-accent-purple-400 focus-within:ring-amber-300 overflow-hidden h-full w-full ${demoUrl ? 'xl:grid xl:grid-cols-[1.2fr,1fr] xl:gap-0' : ''}`}
       role="article"
       aria-labelledby={`project-${title.toLowerCase().replace(/\s+/g, '-')}`}
       variants={scaleIn}
@@ -54,7 +54,7 @@ export function ProjectCard({
     >
       {demoUrl && (
         <motion.div
-          className="relative w-full aspect-[16/9] xl:aspect-[4/3] overflow-hidden group rounded-t-lg xl:rounded-tr-none xl:rounded-l-lg bg-gray-950/50"
+          className="relative w-full aspect-[16/9] xl:aspect-auto xl:h-full overflow-hidden group rounded-t-lg xl:rounded-tr-none xl:rounded-l-lg bg-gray-950/50"
           variants={{
             initial: { opacity: 0, y: 20 },
             animate: { opacity: 1, y: 0, transition: { delay: 0.1 } }
@@ -88,7 +88,7 @@ export function ProjectCard({
           />
         </motion.div>
       )}
-      <div className="p-6 space-y-4 md:max-w-3xl md:mx-auto">
+      <div className="p-6 space-y-4 flex flex-col h-full">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div>
@@ -143,7 +143,7 @@ export function ProjectCard({
           animate: { opacity: 1 }
         }}
       >
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto pt-4">
           {technologies.map((tech, index) => (
             <motion.span
               key={tech.name}
