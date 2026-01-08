@@ -23,7 +23,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a 
-                href="/cv.pdf" 
+                href="/BenCV.pdf" 
                 className="inline-flex items-center justify-center px-6 py-3 border-2 dark:border-white/20 border-amber-300/30 rounded-lg text-base font-medium dark:text-white text-amber-100 dark:bg-white/5 bg-amber-400/10 dark:hover:bg-white/10 hover:bg-amber-400/20 focus:outline-none focus:ring-2 dark:focus:ring-white/30 focus:ring-amber-300/30 transition-all duration-200 backdrop-blur-sm"
               >
                 <svg className="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
